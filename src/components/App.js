@@ -1,7 +1,11 @@
 import React from 'react';
-import VideoList from './VideoList.js';
-import VideoPlayer from './VideoPlayer.js';
-import Search from './Search.js';
+// import VideoList from './VideoList.js';
+// import VideoPlayer from './VideoPlayer.js';
+// import Search from './Search.js';
+import SearchContainer from '../containers/SearchContainer.js';
+import VideoListContainer from '../containers/VideoListContainer';
+import VideoPlayerContainer from '../containers/VideoPlayerContainer';
+import exampleVideoData from '../data/exampleVideoData';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +17,10 @@ class App extends React.Component {
     };
 
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+    // this.handleVideoListEntryTitleClick = this.handleVideoListEntryTitleClick.bind(this);
+    // this.props.searchYouTube = this.props.searchYouTube.bind(this);
+    // this.componentDidMount = this.componentDidMount.bind(this);
+
   }
 
   componentDidMount() {
@@ -44,15 +52,15 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 col-md-offset-3">
-            <Search getYouTubeVideos={this.getYouTubeVideos}/>
+            <SearchContainer getYouTubeVideos={this.getYouTubeVideos}/>
           </div>
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo}/>
+            <VideoPlayerContainer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList
+            <VideoListContainer
               handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
               videos={this.state.videos}
             />

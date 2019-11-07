@@ -1,4 +1,5 @@
 import Redux from 'redux';
+import exampleVideoData from '../data/exampleVideoData';
 
 var currentVideoReducer = (state = null, action) => {
   //TODO: define a reducer for the currentVideo field of our state.
