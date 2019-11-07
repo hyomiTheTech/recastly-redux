@@ -8,7 +8,8 @@
   "scripts": {
     "test": "live-server --open=./SpecRunner.html --port=8081",
     "start": "live-server",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "bundle": "npm run test & npm run start & npm run build"
   },
   "dependencies": {
     "babel-core": "6.24.1",
@@ -21,10 +22,12 @@
     "popper.js": "^1.12.9",
     "react": "^15.6.1",
     "react-dom": "^15.4.2",
-    "react-redux": "^5.0.6",
-    "redux": "^3.6.0",
-    "redux-thunk": "2.2.0",
-    "thunk": "0.0.1"
+    "react-redux": "^5.1.2",
+    "react-test-renderer": "^16.11.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "thunk": "0.0.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
